@@ -34,5 +34,17 @@ class Deck():
             self.string += i.__str__()+'\n'
         
         return self.string
+    
+    def shuffle(self): # for shuffle deck
 
-print(Deck())
+        random.shuffle(self.deck)
+
+    def give_card(self):
+        card = self.deck.pop()
+
+        return card
+
+# Testing area
+d = Deck()
+d.shuffle()
+print(d.give_card())
