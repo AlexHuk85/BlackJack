@@ -24,7 +24,8 @@ class Deck():
 
         for suit in suits:
             for rank in ranks:
-                self.deck.append(Card(suit,rank))
+                card = Card(suit,rank)
+                self.deck.append(card)
     
     def __str__(self): # for display all cards
         
@@ -62,10 +63,10 @@ class Hand():
     
 
 # Testing area
-d = Deck()
-d.shuffle()
-c = d.give_card()
-print(c)
-h = Hand()
-my_list = h.add_card(c)
-print(my_list)
+test_deck = Deck()
+test_deck.shuffle()
+#print(test_deck) # <-- print out 52 cards
+test_player = Hand()
+test_player.add_card(test_deck.give_card())
+test_player.add_card(test_deck.give_card())
+print(test_player.value)
