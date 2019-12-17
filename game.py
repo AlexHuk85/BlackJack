@@ -44,7 +44,28 @@ class Deck():
 
         return card
 
+# Hand class
+class Hand():
+
+    def __init__(self):
+        self.cards = []
+        self.value = 0
+
+    def add_card(self,card):
+        self.cards.append(card)
+        self.value += values[card.rank]
+        # return self.value # <-- this line for debug
+
+    def adjust_ace(self):
+        pass
+
+    
+
 # Testing area
 d = Deck()
 d.shuffle()
-print(d.give_card())
+c = d.give_card()
+print(c)
+h = Hand()
+my_list = h.add_card(c)
+print(my_list)
