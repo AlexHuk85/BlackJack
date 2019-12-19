@@ -70,3 +70,5 @@ test_player = Hand()
 test_player.add_card(test_deck.give_card())
 test_player.add_card(test_deck.give_card())
 print(test_player.value)
+for card in test_player.cards:
+    print(card)
